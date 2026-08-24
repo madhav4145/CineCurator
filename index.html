@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CineCurator — Discover Movies, Series & TV Shows</title>
+<meta name="description" content="CineCurator is a premium movie, web series and TV show discovery platform powered by OMDb." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/features.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+<a href="#main" class="visually-hidden">Skip to content</a>
+
+<header class="navbar">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo"><i class="fa-solid fa-film"></i> Cine<span>Curator</span></a>
+    <nav class="navbar__menu" id="navbar-menu" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="search.html?type=movie">Movies</a>
+      <a href="search.html?type=series">Series</a>
+      <a href="search.html?type=series">TV Shows</a>
+      <a href="favorites.html">Favorites</a>
+      <a href="watchlist.html">Watchlist</a>
+    </nav>
+    <div class="navbar__actions">
+      <a class="navbar__search-link" href="search.html" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
+      <button class="navbar__dice" type="button" aria-label="Surprise me with a random title" title="Surprise me"><i class="fa-solid fa-dice"></i></button>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark or light mode"><i class="fa-solid fa-moon"></i></button>
+      <button class="navbar__burger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navbar-menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="container hero__inner">
+      <span class="hero__eyebrow"><span class="dot"></span> Now streaming your next favorite</span>
+      <h1 class="hero__title">Find what to <span class="accent">watch</span> tonight.</h1>
+      <p class="hero__subtitle">Search thousands of movies, web series and TV shows, build your watchlist, and never scroll aimlessly again.</p>
+
+      <div class="search-hero">
+        <form class="search-hero__form" id="hero-search-form" role="search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <label for="hero-search-input" class="visually-hidden">Search titles</label>
+          <input id="hero-search-input" type="text" placeholder="Search “Dune”, “Breaking Bad”, “The Bear”…" autocomplete="off" />
+          <button type="submit">Search <i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+        <div class="suggestions" id="hero-search-suggestions"></div>
+        <p class="kbd-hint">Or press <kbd>/</kbd> from anywhere to quick-search</p>
+      </div>
+
+      <div class="hero-featured" id="hero-featured"></div>
+    </div>
+  </section>
+
+  <div class="filmstrip-divider" aria-hidden="true"></div>
+
+  <section class="section">
+    <div class="container">
+      <div class="chips-row" id="genre-chips" aria-label="Browse by genre"></div>
+    </div>
+  </section>
+
+  <section class="section" id="recently-viewed-section" hidden>
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title"><i class="fa-solid fa-clock-rotate-left"></i> Jump Back In</h2>
+        <span class="section__desc">RECENTLY VIEWED</span>
+      </div>
+      <div class="rail" id="recently-viewed-rail"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title"><i class="fa-solid fa-fire"></i> Trending Now</h2>
+        <span class="section__desc">UPDATED TODAY</span>
+      </div>
+      <div class="rail" id="trending-rail"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title"><i class="fa-solid fa-clapperboard"></i> Movies</h2>
+        <a class="link-btn" href="search.html?type=movie">See all →</a>
+      </div>
+      <div class="rail" id="movies-rail"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title"><i class="fa-solid fa-tv"></i> Web Series</h2>
+        <a class="link-btn" href="search.html?type=series">See all →</a>
+      </div>
+      <div class="rail" id="series-rail"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2 class="section__title"><i class="fa-solid fa-satellite-dish"></i> TV Shows</h2>
+        <a class="link-btn" href="search.html?type=series">See all →</a>
+      </div>
+      <div class="rail" id="tvshows-rail"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cinematch-promo">
+        <div class="cinematch-promo__text">
+          <span class="hero__eyebrow"><span class="dot"></span> New · Personalized picks</span>
+          <h2>Not sure what to watch? <span class="accent">Let CineMatch decide.</span></h2>
+          <p>Answer three quick questions about your mood and we'll curate a shortlist just for tonight.</p>
+          <div class="cinematch-promo__actions">
+            <a class="btn btn--primary" href="cinematch.html"><i class="fa-solid fa-wand-magic-sparkles"></i> Take the CineMatch Quiz</a>
+            <a class="btn btn--outline" href="stats.html"><i class="fa-solid fa-chart-simple"></i> View My CineStats</a>
+          </div>
+        </div>
+        <div class="cinematch-promo__art" aria-hidden="true">
+          <i class="fa-solid fa-clapperboard"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <span>© 2026 CineCurator | Designed & Developed by Madhav</span>
+    <span><a href="favorites.html">Favorites</a> · <a href="watchlist.html">Watchlist</a> · <a href="cinematch.html">CineMatch</a> · <a href="stats.html">My Stats</a></span>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

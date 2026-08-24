@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Details — CineCurator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/features.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+<a href="#main" class="visually-hidden">Skip to content</a>
+
+<header class="navbar">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo"><i class="fa-solid fa-film"></i> Cine<span>Curator</span></a>
+    <nav class="navbar__menu" id="navbar-menu" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="search.html?type=movie">Movies</a>
+      <a href="search.html?type=series">Series</a>
+      <a href="search.html?type=series">TV Shows</a>
+      <a href="favorites.html">Favorites</a>
+      <a href="watchlist.html">Watchlist</a>
+    </nav>
+    <div class="navbar__actions">
+      <a class="navbar__search-link" href="search.html" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
+      <button class="navbar__dice" type="button" aria-label="Surprise me with a random title" title="Surprise me"><i class="fa-solid fa-dice"></i></button>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark or light mode"><i class="fa-solid fa-moon"></i></button>
+      <button class="navbar__burger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navbar-menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="container" id="details-root" style="position:relative;"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <span>© 2026 CineCurator | Designed & Developed by Madhav</span>
+    <span><a href="favorites.html">Favorites</a> · <a href="watchlist.html">Watchlist</a> · <a href="cinematch.html">CineMatch</a> · <a href="stats.html">My Stats</a></span>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/details.js"></script>
+</body>
+</html>
